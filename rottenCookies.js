@@ -1,7 +1,7 @@
-Game.registerMod("rottenCookies", {
+Game.registerMod("Rotten Cookies", {
   init: function () {
     ncs = this;
-    img = "https://raw.githubusercontent.com/NCResources/My-Cookie-Clicker-Mods/main/rottenCookies.png";
+    img = "https://ncresources.github.io/rottenCookies.png";
     if (Game.ready) {
       ncs.createAchievements();
       Game.Notify(
@@ -13,25 +13,25 @@ Game.registerMod("rottenCookies", {
     Game.registerHook("check", ncs.checkAchievements);
   },
   createAchievements: function () {
-    this.achievements = [];
-    this.achievements.push(
+    ncs.achievements = [];
+    ncs.achievements.push(
       new Game.Achievement(
-        "Get Started",
-        "Boot up the game for the first time",
+        "Wake up and bake",
+        "Play <b>Cookie Clicker</b> before <b>7am</b>.",
         [0, 1, img]
       )
     );
     LocalizeUpgradesAndAchievs();
   },
   checkAchievements: function () {
-    Game.Win("Get Started");
+    if (new Date().getHours() < 7) Game.Win("Wake up and bake");
   },
   save: function () {
     let str = "";
-    for (let i of this.achievements) str += i.won;
+    for (let i of ncs.achievements) str += i.won;
     return str;
   },
   load: function (str) {
-    for (let i in this.achievements) this.achievements[i].won = Number(str[i]);
+    for (let i in ncs.achievements) ncs.achievements[i].won = Number(str[i]);
   },
 });
