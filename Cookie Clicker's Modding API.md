@@ -1,0 +1,84 @@
+# MODDING API
+
+-(NOTE: this functions a little differently in the standalone/Steam version; have a look in the game's /mods folder for example mods - though most of the information below still applies)
+
+-Have your mod call Game.registerMod("unique id",mod object)
+
+-The "unique id" value is a string the mod will use to index and retrieve its save data; special characters are ignore
+
+-The "mod object" value is an object structured like so:
+
+```
+{
+	init:function(){
+		//this function is called as soon as the mod is registered
+		//declare hooks here
+	},
+	save:function(){
+		//use this to store persistent data associated with your mod
+		return 'a string to be saved';
+	},
+	load:function(str){
+		//do stuff with the string data you saved previously
+	},
+}
+```
+-The mod object may also contain any other data or functions you want, for instance to make them accessible to other mods
+
+-Your mod and its data can be accessed with Game.mods['mod id']
+
+
+-Hooks are functions the game calls automatically in certain circumstances, like when calculating cookies per click or when redrawing the screen
+
+-To add a hook: Game.registerHook('hook id',yourFunctionHere) - note: you can also declare whole arrays of hooks, ie. Game.registerHook('hook id',[function1,function2,...])
+
+-To remove a hook: Game.removeHook('hook id',theSameFunctionHere)
+
+-Some hooks are fed a parameter you can use in the function
+
+-List of valid hook ids:<b>
+
+```logic``` - called every logic tick
+
+```draw``` - called every draw tick
+
+```reset``` - called whenever the player resets; parameter is true if this is a hard reset, false if it's an ascension
+
+```reincarnate``` - called when the player has reincarnated after an ascension
+
+```ticker``` - called when determining news ticker text; should return an array of possible choices to add
+
+```cps``` - called when determining the CpS; parameter is the current CpS; should return the modified CpS
+
+```cookiesPerClick``` - called when determining the cookies per click; parameter is the current value; should return the modified value
+
+```click``` - called when the big cookie is clicked
+
+```create``` - called after the game declares all buildings, buffs, upgrades and achievs; use this to declare your own - note that while the game distinguishes between vanilla and non-vanilla content, saving/loading functionality for custom content (including stuff like active buffs or permanent upgrade slotting) is not explicitly implemented and may be unpredictable and broken
+
+```check``` - called every few seconds when we check for upgrade/achiev unlock conditions; you can also use this for other checks that you don't need happening every logic frame
+
+</b>-Function hooks are provided for convenience and more advanced mod functionality will probably involve manual code injection
+
+-Please be mindful of the length of the data you save, as it does inflate the export-save-to-string feature
+
+NOTE: modding API is susceptible to change and may not always function super-well
+
+-Example mod structure:
+```
+Game.registerMod("Mod Name", {
+	init:function(){
+		//this function is called as soon as the mod is registered
+		//declare hooks here
+	},
+	save:function(){
+		//use this to store persistent data associated with your mod
+		return 'a string to be saved';
+	},
+	load:function(str){
+		//do stuff with the string data you saved previously
+	},
+})
+```
+-Example mod injector:  
+```(function(){Game.LoadMod('https://Your GitHub Name.github.io/GitHub Repo Name/Mod Filename')})();```
