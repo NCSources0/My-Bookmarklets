@@ -2,7 +2,7 @@
 ## [Rotten Cookies](rottenCookies.js):
 ### Bookmarklet:
 ```
-javascript:(function(){if(document.getElementById('topbarOrteil')==null){alert('This only works on Cookie Clicker!');}else{Game.Notify('Installing Mod!','<b>Rotten Cookies</b>',[0,0,'https://ncresources.github.io/My-Cookie-Clicker-Mods/rottenCookies.png']);Game.LoadMod('https://ncresources.github.io/My-Cookie-Clicker-Mods/rottenCookies.js');}})();
+javascript:(function(){if(document.getElementById('topbarOrteil')==null){alert('This only works on Cookie Clicker!');}else{if(Game.mods['Rotten Cookies']){Game.Notify('Mod already installed!','<b>Rotten Cookies</b>',[0,0,'https://ncresources.github.io/My-Cookie-Clicker-Mods/rottenCookies.png']);}else{Game.Notify('Installing mod!','<b>Rotten Cookies</b>',[0,0,'https://ncresources.github.io/My-Cookie-Clicker-Mods/rottenCookies.png']);Game.LoadMod('https://ncresources.github.io/My-Cookie-Clicker-Mods/rottenCookies.js');}}})();
 ```
 # Bookmarklets:
 ## Toggleable:
