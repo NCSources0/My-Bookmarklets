@@ -8,10 +8,8 @@ body {
 }
 
 div#code a {
-	text-wrap: nowrap;
-	font-size: 16px;
+	float: right;
 	background-color: #444;
-	margin-right: 10px;
 }
 
 a {
@@ -35,15 +33,4 @@ span#code,
 div#code a {
 	padding: 4px;
 	border-radius: 4px;
-}
-
-#cover {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	background-size: cover;
-	background-image: linear-gradient(to top, #000, #0000, #0000, #0000, #0000, #000);
-	z-index: 99999;
 }
