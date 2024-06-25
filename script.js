@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
       copy(ogText);
     });
     div.appendChild(button);
+		console.log(div.innerHTML);
     div.innerHTML += ogHTML;
   });
 });
