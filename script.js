@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     div.appendChild(button);
     console.log(div.innerHTML);
-    div.innerHTML += `<br/>${ogHTML}`;
+    div.innerHTML += ogHTML;
   });
 });
 
