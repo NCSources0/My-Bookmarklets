@@ -7,8 +7,16 @@ body {
 	color: #fff;
 }
 
+div#code a {
+	text-wrap: nowrap;
+	font-size: 16px;
+	background-color: #444;
+	margin-right: 10px;
+}
+
 a {
-	color: #fff
+	color: #fff;
+	cursor: pointer;
 }
 
 a:hover {
@@ -16,13 +24,15 @@ a:hover {
 }
 
 #code {
+	word-wrap: break-word;
 	font-family: 'Source Code Pro';
 	background-color: #222;
-	padding: 4px 8px;
+	padding: 8px;
 	border-radius: 8px;
 }
 
-span#code {
-	padding: 2px 4px;
+span#code,
+div#code a {
+	padding: 4px;
 	border-radius: 4px;
 }
