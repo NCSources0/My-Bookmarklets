@@ -2,8 +2,7 @@
 <head>
 <title>Bookmarklets</title>
 </head>
-<body>
-<h1>Links</h1>
+<body><h1>Links</h1>
 <a href="https://dashnet.org">DashNet</a>
   <a href="https://orteil.dashnet.org">Orteil's Homepage</a>
     <a href="https://orteil.dashnet.org/cookieclicker">Cookie Clicker</a>
@@ -18,6 +17,5 @@
 <a href="javascript:(function(){if(document.getElementById('topbarOrteil')==null){alert('This only works on Cookie Clicker!')}else{let devToolsEnabled=(l('debug').style.display==='block');if(!devToolsEnabled){PlaySound('snd/tick.mp3');Game.Notify('Dev Tools Enabled','<b>I HAVE THE POWER</b>',[1,7]);Game.OpenSesame();l('debug').style.display='block'}else{PlaySound('snd/tickOff.mp3');Game.Notify('Dev Tools Disabled','<b>Turn them back on, NOW</b>',[1,7]);l('debug').style.display='none'}}})()">Toggle Dev Tools</a>
 <a href="javascript:(function(){var code=prompt('Code to run:');if(code){var script=document.createElement('script');script.textContent=decodeURIComponent(code);document.head.appendChild(script);document.head.removeChild(script)}})()">JavaScript Code Runner</a>
 <a href="javascript:if(prompt('Are you SURE? y/n')=='y'){document.body.innerHTML='';document.head.innerHTML=''}">Website ERASER</a>
-<script src="https://ncresources.github.io/HTML-blog-resources/script.js"></script>
-</body>
+<script src="https://ncresources.github.io/HTML-blog-resources/script.js"></script></body>
 </html>
