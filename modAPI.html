@@ -14,8 +14,7 @@
 - The "unique id" value is a string the mod will use to index and retrieve its save data; special characters are ignore
 
 - The "mod object" value is an object structured like so:
-<div id="code">
-{
+<div id="code">{
   init:function(){
     //this function is called as soon as the mod is registered
     //declare hooks here
@@ -27,8 +26,7 @@
   load:function(str){
     //do stuff with the string data you saved previously
   },
-}
-</div>
+}</div>
 
 - The mod object may also contain any other data or functions you want, for instance to make them accessible to other mods
 
@@ -70,8 +68,7 @@
 NOTE: modding API is susceptible to change and may not always function super-well
 
 - Example mod structure:
-<div id="code">
-Game.registerMod("unique id", {
+<div id="code">Game.registerMod("unique id", {
   init:function(){
     //this function is called as soon as the mod is registered
     //declare hooks here
@@ -83,13 +80,10 @@ Game.registerMod("unique id", {
   load:function(str){
     //do stuff with the string data you saved previously
   },
-})
-</div>
+})</div>
 
 - Example mod injector:
-<div id="code">
-(function(){Game.LoadMod('https://Your GitHub Name.github.io/Your GitHub Repo Name/Mod Filename')})()
-</div>
-<script src="https://ncresources.github.io/HTML-blog-resources/script.js"></script>
+<div id="code">(function(){Game.LoadMod('https://Your GitHub Name.github.io/Your GitHub Repo Name/Mod Filename')})()</div>
+<script src="https://raw.githubusercontent.com/NCResources/HTML-blog-resources/main/script.js"></script>
 </body>
 </html>
