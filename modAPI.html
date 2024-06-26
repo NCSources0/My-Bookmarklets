@@ -4,8 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Cookie Clicker's Modding API</title>
 </head>
-<body><h1>MODDING API</h1>
-- (NOTE: this functions a little differently in the standalone/Steam version; have a look in the game's /mods folder for example mods - though most of the information below still applies)
+<body><h1>MODDING API</h1>- (NOTE: this functions a little differently in the standalone/Steam version; have a look in the game's /mods folder for example mods - though most of the information below still applies)
 
 - Have your mod call Game.registerMod("unique id", mod object)
 
@@ -25,39 +24,38 @@
     //do stuff with the string data you saved previously
   },
 }</div>
-
 - The mod object may also contain any other data or functions you want, for instance to make them accessible to other mods
 
 - Your mod and its data can be accessed with Game.mods['mod id']
 
 - Hooks are functions the game calls automatically in certain circumstances, like when calculating cookies per click or when redrawing the screen
 
-- To add a hook: Game.registerHook('hook id', yourFunctionHere) - note: you can also declare whole arrays of hooks, ie. Game.registerHook('hook id',[function1,function2,...])
+- To add a hook: Game.registerHook('hook id', yourFunctionHere) - note: you can also declare whole arrays of hooks, ie. Game.registerHook('hook id', [function1, function2, ...])
 
 - To remove a hook: Game.removeHook('hook id', theSameFunctionHere)
 
 - Some hooks are fed a parameter you can use in the function
 
 - List of valid hook ids:
-<span id="code">logic</span>- called every logic tick
+<span id="code">logic</span> - called every logic tick
 
-<span id="code">draw</span>- called every draw tick
+<span id="code">draw</span> - called every draw tick
 
-<span id="code">reset</span>- called whenever the player resets; parameter is true if this is a hard reset, false if it's an ascension
+<span id="code">reset</span> - called whenever the player resets; parameter is true if this is a hard reset, false if it's an ascension
 
-<span id="code">reincarnate</span>- called when the player has reincarnated after an ascension
+<span id="code">reincarnate</span> - called when the player has reincarnated after an ascension
 
-<span id="code">ticker</span>- called when determining news ticker text; should return an array of possible choices to add
+<span id="code">ticker</span> - called when determining news ticker text; should return an array of possible choices to add
 
-<span id="code">cps</span>- called when determining the CpS; parameter is the current CpS; should return the modified CpS
+<span id="code">cps</span> - called when determining the CpS; parameter is the current CpS; should return the modified CpS
 
-<span id="code">cookiesPerClick</span>- called when determining the cookies per click; parameter is the current value; should return the modified value
+<span id="code">cookiesPerClick</span> - called when determining the cookies per click; parameter is the current value; should return the modified value
 
-<span id="code">click</span>- called when the big cookie is clicked
+<span id="code">click</span> - called when the big cookie is clicked
 
-<span id="code">create</span>- called after the game declares all buildings, buffs, upgrades and achievs; use this to declare your own - note that while the game distinguishes between vanilla and non-vanilla content, saving/loading functionality for custom content (including stuff like active buffs or permanent upgrade slotting) is not explicitly implemented and may be unpredictable and broken
+<span id="code">create</span> - called after the game declares all buildings, buffs, upgrades and achievs; use this to declare your own - note that while the game distinguishes between vanilla and non-vanilla content, saving/loading functionality for custom content (including stuff like active buffs or permanent upgrade slotting) is not explicitly implemented and may be unpredictable and broken
 
-<span id="code">check</span>- called every few seconds when we check for upgrade/achiev unlock conditions; you can also use this for other checks that you don't need happening every logic frame
+<span id="code">check</span> - called every few seconds when we check for upgrade/achiev unlock conditions; you can also use this for other checks that you don't need happening every logic frame
 
 - Function hooks are provided for convenience and more advanced mod functionality will probably involve manual code injection
 
@@ -79,7 +77,6 @@ NOTE: modding API is susceptible to change and may not always function super-wel
     //do stuff with the string data you saved previously
   },
 })</div>
-
 - Example mod injector:
 <div id="code">(function(){Game.LoadMod('https://Your GitHub Name.github.io/Your GitHub Repo Name/Mod Filename')})()</div>
 <script src="https://ncresources.github.io/HTML-blog-resources/script.js"></script></body>
