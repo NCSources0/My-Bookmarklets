@@ -28,7 +28,7 @@ Game.registerMod("Rotten Cookies", {
   checkAchievements: function () {
     Game.Win("Third-party");
     if (new Date().getHours() < 7) Game.Win("Wake up and bake");
-    if (Game.bakeryName == "ncsources" || Game.bakeryName == "ncsources0") Game.Win("The thing maker");
+    if (Game.bakeryName == "ncsources" || Game.bakeryName == "NCSources" || Game.bakeryName == "ncsources0" || Game.bakeryName == "NCSources0") Game.Win("The thing maker");
   },
   save: function () {
     let str = "";
