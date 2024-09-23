@@ -5,7 +5,7 @@ Game.registerMod("Rotten Cookies", {
     if (Game.ready) {
       this.createAchievements();
       Game.Notify(
-        "Successfully Installed Mod!",
+        "Successfully Installed Add-On!",
         "<b>Rotten Cookies</b><q>they're suprisingly good</q>",
         [0, 0, img]
       );
@@ -22,7 +22,7 @@ Game.registerMod("Rotten Cookies", {
         (order = 0)
       ),
       new Game.Achievement(
-        "The mod maker",
+        "The thing maker",
         "Change your bakery's name to <b>NCSources</b>",
         [0, 0, img]
       ),
@@ -33,7 +33,7 @@ Game.registerMod("Rotten Cookies", {
   checkAchievements: function () {
     Game.Win("Third-party");
     if (new Date().getHours() < 7) Game.Win("Wake up and bake");
-    if (Game.bakeryName == "ncsources" || Game.bakeryName == "ncsources0") Game.Win("The mod maker");
+    if (Game.bakeryName == "ncsources" || Game.bakeryName == "ncsources0") Game.Win("The thing maker");
   },
   save: function () {
     let str = "";
