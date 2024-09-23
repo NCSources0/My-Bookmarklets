@@ -4,11 +4,6 @@ Game.registerMod("Rotten Cookies", {
       "https://ncsources0.github.io/My-Bookmarklets/rottenCookies.png";
     if (Game.ready) {
       this.createAchievements();
-      Game.Notify(
-        "Successfully Installed Add-On!",
-        "<b>Rotten Cookies</b><q>they're suprisingly good</q>",
-        [0, 0, img]
-      );
     } else Game.registerHook("create", this.createAchievements);
     Game.registerHook("check", this.checkAchievements);
   },
