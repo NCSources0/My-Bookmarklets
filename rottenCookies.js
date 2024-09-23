@@ -33,7 +33,7 @@ Game.registerMod("Rotten Cookies", {
   checkAchievements: function () {
     Game.Win("Third-party");
     if (new Date().getHours() < 7) Game.Win("Wake up and bake");
-    if (Game.bakeryName == "ncsources") Game.Win("The mod maker");
+    if (Game.bakeryName == "ncsources" || Game.bakeryName == "ncsources0") Game.Win("The mod maker");
   },
   save: function () {
     let str = "";
