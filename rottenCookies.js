@@ -1,7 +1,7 @@
 Game.registerMod("Rotten Cookies", {
   init: function () {
     img =
-      "https://ncresources.github.io/My-Cookie-Clicker-Mods/rottenCookies.png";
+      "https://ncsources0.github.io/My-Bookmarklets/rottenCookies.png";
     if (Game.ready) {
       this.createAchievements();
       Game.Notify(
