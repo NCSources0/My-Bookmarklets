@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Bookmarklets</title>
-<script>var pre=1;</script>
+<script>pre=1</script>
 </head>
 <body><h1>Links</h1><a href="https://dashnet.org" target="_blank">DashNet</a>
   <a href="https://orteil.dashnet.org" target="_blank">Orteil's Homepage</a>
@@ -14,6 +14,7 @@
 <h1>Drag these to your bookmarks bar</h1><h3>If your bookmarks bar's hidden press ctrl+shift+b, or ⌘+shift+b, both are for Chrome</h3><a href="javascript:(function(){const Game=unsafeWindow.Game,isReady=setInterval(()=>{if(Game.ready){Game.Notify('Loading Add-On!',`<b><a href='https://ncsources0.github.io/My-Bookmarklets'target='_blank'>Rotten Cookies</a></b>`,[0,0,'https://ncsources0.github.io/My-Bookmarklets/rottenCookies.png']);Game.LoadMod('https://ncsources0.github.io/My-Bookmarklets/rottenCookies.js')}},0)})()">Install Rotten Cookies</a>
 <a href="javascript:(function(){var code=prompt('Code to run:');if(code){var script=document.createElement('script');script.textContent=decodeURIComponent(code);document.head.appendChild(script);document.head.removeChild(script)}})()">JavaScript Code Runner</a>
 <a href="javascript:if(confirm('Are you SURE?')){document.body.innerHTML='';document.head.innerHTML=''}">Website ERASER</a>
-<div id="uScript"></div>
-<script src="https://ncsources0.github.io/HTML-blog-resources/script.js"></script></body>
+<div id="uScript" data-link="https://ncsources0.github.io/My-Bookmarklets/addonLoader.user.js"></div>
+<script src="https://ncsources0.github.io/HTML-blog-resources/script.js"></script>
+</body>
 </html>
