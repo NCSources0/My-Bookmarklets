@@ -19,7 +19,11 @@ try {
 
   else if (location.hostname === 'open.spotify.com') new MutationObserver(() => {
     const albumBtn = document.querySelector('button[aria-label="Download"]');
-    if (albumBtn && !location.pathname.startsWith('/collection/tracks')) {
+    if (albumBtn) {
+      if (location.pathname.startsWith('/collection/tracks')) {
+        albumBtn.style.display = 'none';
+        return;
+      }
       const newAlbumBtn = document.createElement('button');
       newAlbumBtn.onclick = () => open(`http://spotdownloader.com/?link=${location}&download`);
       newAlbumBtn.innerHTML = albumBtn.innerHTML;
