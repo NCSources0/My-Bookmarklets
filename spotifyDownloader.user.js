@@ -5,7 +5,6 @@
 // @author       NCSources0
 // @match        *://open.spotify.com/*
 // @match        *://spotdownloader.com/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=spotify.com
 // ==/UserScript==
 
 try {
