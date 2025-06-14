@@ -19,15 +19,14 @@ try {
   else if (location.hostname === 'open.spotify.com') new MutationObserver(() => {
     const albumBtn = document.querySelector('button[aria-label="Download"]');
     if (albumBtn) {
-      if (location.pathname.startsWith('/collection/tracks')) {
-        albumBtn.style.display = 'none';
-        return;
+      if (location.pathname.startsWith('/collection/tracks')) albumBtn.style.display = 'none';
+      else {
+        const newAlbumBtn = document.createElement('button');
+        newAlbumBtn.onclick = () => open(`http://spotdownloader.com/?link=${location}&download`);
+        newAlbumBtn.innerHTML = albumBtn.innerHTML;
+        newAlbumBtn.classList.add(...albumBtn.classList)
+        albumBtn.replaceWith(newAlbumBtn);
       }
-      const newAlbumBtn = document.createElement('button');
-      newAlbumBtn.onclick = () => open(`http://spotdownloader.com/?link=${location}&download`);
-      newAlbumBtn.innerHTML = albumBtn.innerHTML;
-      newAlbumBtn.classList.add(...albumBtn.classList)
-      albumBtn.replaceWith(newAlbumBtn);
     }
 
     const contextMenu = document.querySelector('div#context-menu ul');
